@@ -1,5 +1,4 @@
 import Data.List
-import Data.Complex
 
 main = do
        putStrLn "Lenght gives the number of elements in a list"

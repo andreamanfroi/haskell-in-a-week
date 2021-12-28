@@ -1,6 +1,6 @@
 -- PROBLEM:
 -- Find the last element of a list, such as that
--- lastFunction [1,2 3, 4, 5] is 5
+-- lastFunction [1,2,3,4,5] is 5
 -- lastFunction "hello mates" is s
 
 --------------------------------------------------------------------------------------------------
@@ -41,9 +41,15 @@ myLast''''' = last
 
 main = do
        putStrLn "The last element of [1..10] is:"
-       print (myLast [1..10])
-       print (myLast' [1..10])
-       print (myLast'' [1..10])
-       print (myLast''' [1..10])
-       print (myLast'''' [1..10])
-       print (myLast''''' [1..10])
+       print $ myLast [1..10]
+       print $ myLast "hello mates"
+       print $ myLast' [1..10]
+       print $ myLast' "hello mates"
+       print $ myLast'' [1..10]
+       print $ myLast'' "hello mates"
+       print $ myLast''' [1..10]
+       print $ myLast''' "hello mates"
+       print $ myLast'''' [1..10]
+       print $ myLast'''' "hello mates"
+       print $ myLast''''' [1..10]
+       print $ myLast''''' "hello mates"
