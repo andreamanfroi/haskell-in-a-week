@@ -6,7 +6,7 @@
 --------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
 
--- 1. Declarative way.
+-- 1. Declarative/Pattern Matching way.
 --    When the list is empty, then we can return an error,
 --    as well as when the list contains only one element.
 --    In the base case of two elements, we grab the first in order.
