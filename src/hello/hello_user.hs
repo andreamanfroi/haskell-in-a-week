@@ -1,5 +1,6 @@
 import Data.Char(toUpper)
 
+main :: IO ()
 main = do
        putStrLn "What's your first name?"
        firstName <- getLine

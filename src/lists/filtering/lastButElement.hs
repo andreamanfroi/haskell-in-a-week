@@ -34,8 +34,9 @@ lastButOne'' = head . tail . reverse
 
 -- 4. Using list indexing
 lastButOne''' :: [a] -> a
-lastButOne''' xs = (reverse xs) !! 1
+lastButOne''' xs = reverse xs !! 1
 
+main :: IO ()
 main = do
        putStrLn "The but last element of [1..10] is:"
        print $ lastButOne [1..10]

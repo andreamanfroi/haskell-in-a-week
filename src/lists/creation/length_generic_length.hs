@@ -1,5 +1,6 @@
 import Data.List
 
+main :: IO ()
 main = do
        putStrLn "Lenght gives the number of elements in a list"
        putStrLn "For example, length [1,2,3,4,5,6] is: "

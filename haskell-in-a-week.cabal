@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Lib
+      StrAdd
   other-modules:
       Paths_haskell_in_a_week
   hs-source-dirs:

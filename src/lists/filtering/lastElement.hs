@@ -3,11 +3,8 @@
 -- lastFunction [1,2,3,4,5] is 5
 -- lastFunction "hello mates" is s
 
---------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------
-
-
-import Data.List
+---------------------------------------------------------
+---------------------------------------------------------
 
 -- 1. Recursive solution.
 --    When the list is empty, then we can return an error.
@@ -24,21 +21,22 @@ myLast' = foldr1 (const id)
 
 -- 3. Using foldr1 from Data.List and the flip function on the const function
 myLast'' :: [a] -> a
-myLast'' = foldr1 (flip const)
+myLast'' = foldr1 (\ _ x -> x)
 
 -- 4. Combining a call to head of the reversed list!
 myLast''' :: [a] -> a
-myLast''' xs = head (reverse xs)
+myLast''' = last
 -- can be equivalently written as myLast''' = head . reverse
 
 -- 5. Mmmmmhhhh.....
 myLast'''' :: [a] -> a
-myLast'''' = foldl1 (curry snd)
+myLast'''' = foldl1 (\ _ x -> x)
 
 -- 6. Using built-in 'last' function from Prelude
 myLast''''' :: [a] -> a
 myLast''''' = last
 
+main :: IO ()
 main = do
        putStrLn "The last element of [1..10] is:"
        print $ myLast [1..10]

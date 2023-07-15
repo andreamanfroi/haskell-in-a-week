@@ -1,3 +1,7 @@
+-- In Haskell, the Either type is a data type used to represent a value that can be one of two possible types: 
+-- Left a or Right b 
+-- It is commonly used to handle computations that can result in either a successful result (Right) or a failure 
+-- or error condition (Left)
 
 divide :: Double -> Double -> Either String Double
 divide _ 0 = Left "Cannot divide by zero"
