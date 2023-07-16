@@ -14,8 +14,8 @@
 --    disregarding whatever comes first in the list.
 lastButOne :: [a] -> a
 lastButOne [] = error "No but to end for empty lists!"
-lastButOne [x] = error "Just 1 element!"
-lastButOne [x1,x2] = x1
+lastButOne [_] = error "Just 1 element!"
+lastButOne [x1,_] = x1
 lastButOne (_:x1:xs) = lastButOne (x1:xs)
 
 -- 2. Using the combination of last and init.
