@@ -12,7 +12,8 @@ isPerfectNumber n = sum ( findDivisors n ) == n
 
 
 findDivisors :: Integer -> [Integer]
-findDivisors (number :: Integer) =   filter (\x-> number `mod` x == 0)  [1..(number `div` 2)]
+-- findDivisors (number :: Integer) =   filter (\x-> number `mod` x == 0)  [1..(number `div` 2)]
+findDivisors (number :: Integer) = [x | x <- [1..(number `div` 2)], number `mod` x == 0]
 
 
 main :: IO ()

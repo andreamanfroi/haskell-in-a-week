@@ -9,5 +9,7 @@ fibonacci a b = a:fibonacci b (a+b)
 main = do
       putStrLn "Please, choose the iterations number:"
       its::Int <- readLn
-      print $ take its $ fibonacci 0 1
-      if its > 50 then putStrLn "Might be some overflow..." else putStrLn "done"
+      let res =  take its $ fibonacci 0 1
+      print $ res
+      let evenSum = sum $ filter even res 
+      print $ evenSum
