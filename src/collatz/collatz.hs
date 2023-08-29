@@ -7,8 +7,18 @@ collatz number steps
             | (not $ even number) = collatz (number*3 + 1) (steps + 1)
 
 
+collatz' :: Int -> [Int]
+collatz' n = collatzHelper n []
+  where
+    collatzHelper 1 acc = reverse (1 : acc)
+    collatzHelper x acc
+      | even x    = collatzHelper (x `div` 2) (x : acc)
+      | otherwise = collatzHelper (3 * x + 1) (x : acc)
+
+
 main :: IO ()
 main = do
     print "Input a number........"
     x <- readLn
     putStrLn $ "It takes " ++ show (collatz x  0) ++ " steps to converge"
+    putStrLn $ "Here are the steps of convergence " ++ show (collatz' x )
