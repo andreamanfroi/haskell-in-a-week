@@ -22,6 +22,11 @@ isPalindrome' list = take halfLen list == reverse (drop ( halfLen + (len `mod` 2
                     len = length list
                     halfLen = len `div` 2
 
+-- 3. Recursively
+isPalindromeRecursive :: Eq a => [a] -> Bool
+isPalindromeRecursive [] = True
+isPalindromeRecursive [_] = True
+isPalindromeRecursive (x:xs) = x == last xs && isPalindromeRecursive (init xs)
 
 
 main = do
