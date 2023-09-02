@@ -7,8 +7,7 @@ data Exchange = Exchange
     { currencyFrom :: String
     , currencyTo :: String
     , exchangeRate :: Double
-    } deriving (Show) 
-
+    } deriving (Show)
 
 type ExchangeList = [Exchange]
 
@@ -16,11 +15,11 @@ type ExchangeList = [Exchange]
 showCurrencies :: ExchangeList -> IO ()
 showCurrencies list = do
     let currencies = nub [currencyFrom x | x <- list] ++ [currencyTo x | x <- list]
-    liftIO $ print $ currencies
+    liftIO $ print currencies
 
 -- Function to list exchange rates
 showExchangeRates :: ExchangeList -> IO ()
-showExchangeRates rates = mapM_ printExchange rates
+showExchangeRates = mapM_ printExchange
 
 -- Function to change the currency
 changeCurrency :: Double -> String -> String -> ExchangeList -> IO ()
@@ -29,17 +28,17 @@ changeCurrency amt cf ct list = do
     case excRate of
         Nothing -> return ()
         Just rate -> do
-            liftIO $ putStrLn ("The desired change is: " ++ show (amt * (exchangeRate rate)))
+            liftIO $ putStrLn ("The desired change is: " ++ show (amt * exchangeRate rate))
 
 getExchangeRate :: String -> String -> ExchangeList -> Maybe Exchange
-getExchangeRate curFrom curTo list = maybe Nothing (\exRate -> Just exRate) $ find (\x -> curFrom == currencyFrom x && curTo == currencyTo x) list
-    
+getExchangeRate curFrom curTo list = Just =<< find (\x -> curFrom == currencyFrom x && curTo == currencyTo x) list
+
 printExchange :: Exchange -> IO ()
 printExchange exchange = do
     putStrLn $ "Currency From: " ++ currencyFrom exchange
     putStrLn $ "Currency To: " ++ currencyTo exchange
     putStrLn $ "Exchange Rate: " ++ show (exchangeRate exchange)
-    putStrLn $ "*************"
+    putStrLn "*************"
 
 -- The main program loop
 mainLoop :: StateT ExchangeList IO ()
@@ -48,16 +47,16 @@ mainLoop = do
     liftIO $ putStrLn "2. List available currencies"
     liftIO $ putStrLn "3. List exchange rates"
     liftIO $ putStrLn "4. Quit"
-    choice <- liftIO $ getLine
+    choice <- liftIO getLine
     case choice of
         "1" -> do
             liftIO $ putStrLn "Enter an amount:"
-            amount <- liftIO $ getLine
-            let amtDouble = read amount :: Double 
+            amount <- liftIO getLine
+            let amtDouble = read amount :: Double
             liftIO $ putStrLn "Enter currency from:"
-            currFrom <- liftIO $ getLine
+            currFrom <- liftIO getLine
             liftIO $ putStrLn "Enter currency to:"
-            currTo <- liftIO $ getLine
+            currTo <- liftIO getLine
             exchangeRates <- get
             liftIO $ changeCurrency amtDouble currFrom currTo exchangeRates
             mainLoop
@@ -80,10 +79,12 @@ main :: IO ()
 main = do
     putStrLn "Welcome to Currency Converter!"
     -- these values are preloaded here but they might be read from a file, etc...
-    let exchangeRates = [Exchange "USD" "EUR" 2.3
+    let exchangeRates = [ 
+                          Exchange "USD" "EUR" 2.3
                         , Exchange "GBP" "USD" 1.2
                         , Exchange "USD" "GBP" 1.2
-                        , Exchange "EUR" "GBP" 1.2]
+                        , Exchange "EUR" "GBP" 1.2
+                        ]
     finalState <- execStateT mainLoop exchangeRates
     putStrLn "Goodbye!"
     print finalState
