@@ -72,7 +72,7 @@ mainLoop = do
             mainLoop
         "4" -> return ()
         _ -> do
-            liftIO $ putStrLn "Invalid choice"
+            liftIO $ putStrLn "Invalid choice!"
             mainLoop
 
 main :: IO ()
