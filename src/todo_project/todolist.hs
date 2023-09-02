@@ -13,7 +13,7 @@ addTask desc tasks = tasks ++ [Task desc False]
 
 -- Function to mark a task as completed
 completeTask :: Int -> TaskList -> TaskList
-completeTask index tasks = map updateTask (zip [0..] tasks)
+completeTask index = zipWith (curry updateTask) [0..]
   where
     updateTask (i, task)
         | i == index = task { completed = True }
@@ -34,11 +34,11 @@ mainLoop = do
     liftIO $ putStrLn "2. List tasks"
     liftIO $ putStrLn "3. Complete task"
     liftIO $ putStrLn "4. Quit"
-    choice <- liftIO $ getLine
+    choice <- liftIO getLine
     case choice of
         "1" -> do
             liftIO $ putStrLn "Enter task description:"
-            desc <- liftIO $ getLine
+            desc <- liftIO getLine
             modify (addTask desc)
             mainLoop
         "2" -> do
@@ -47,7 +47,7 @@ mainLoop = do
             mainLoop
         "3" -> do
             liftIO $ putStrLn "Enter task index to complete:"
-            index <- liftIO $ readLn
+            index <- liftIO readLn
             modify (completeTask index)
             mainLoop
         "4" -> return ()
