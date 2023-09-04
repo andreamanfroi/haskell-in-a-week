@@ -21,6 +21,7 @@ description:         Please see the README on GitHub at <https://github.com/andr
 
 dependencies:
 - base >= 4.7 && < 5
+- hspec
 
 ghc-options:
 - -Wall
@@ -34,8 +35,9 @@ ghc-options:
 - -Wredundant-constraints
 
 library:
-  source-dirs: src
-
+  source-dirs: 
+    - src
+    - src/pangram
 executables:
   haskell-in-a-week-exe:
     main:                Main.hs
@@ -57,3 +59,4 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - haskell-in-a-week
+    - hspec
