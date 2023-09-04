@@ -1,4 +1,3 @@
-
 {- 
     A prime number can only be perfectly divided 1 and itself 
 -}

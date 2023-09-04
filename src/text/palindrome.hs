@@ -1,7 +1,5 @@
-{-
-    Palindrome string can be read from right to left as from left to right
-    E.g: kayak, abba, sos
--}
+
+module Palindrome (palindrome, palindrome') where
 
 palindrome :: [Char] -> Bool
 palindrome [x] = True
@@ -17,7 +15,3 @@ rev [] = []
 rev [x] = [x]
 rev (x:xs) = last xs : rev (init xs) ++ [x]
 
-main :: IO ()
-main = do
-    let x = "trollo"
-    print $ palindrome' x

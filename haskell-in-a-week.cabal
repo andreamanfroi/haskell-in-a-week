@@ -28,11 +28,14 @@ library
       Lib
       StrAdd
       Pangram
+      LongestCommonPrefix
+      Palindrome
   other-modules:
       Paths_haskell_in_a_week
   hs-source-dirs:
       src
       src/pangram
+      src/text
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
@@ -56,6 +59,9 @@ test-suite haskell-in-a-week-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      LongestCommonPrefixSpec
+      PalindromeSpec
+      PangramSpec
       Paths_haskell_in_a_week
   hs-source-dirs:
       test
@@ -64,4 +70,5 @@ test-suite haskell-in-a-week-test
       base >=4.7 && <5
     , haskell-in-a-week
     , hspec
+    , hspec-discover
   default-language: Haskell2010

@@ -8,6 +8,8 @@
     lcp("sun", "polite") = "" (no common chars)
 -}
 
+module LongestCommonPrefix (lcp) where
+
 import Data.List (isInfixOf, maximumBy)
 import Data.Ord (comparing)
 
@@ -17,10 +19,3 @@ lcp str1 str2 | length str1 >= length str2 = maximumBy (comparing length) ([x | 
 
 substrings :: String -> [String]
 substrings str = [take len (drop i str) | len <- [1..length str], i <- [0..length str - len]]
-
-main :: IO ()
-main = do
-    let x = "moon"
-    let y = "racoon"
-    print $ lcp x y
-    print $ lcp' x y

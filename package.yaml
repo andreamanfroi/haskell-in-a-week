@@ -38,6 +38,7 @@ library:
   source-dirs: 
     - src
     - src/pangram
+    - src/text
 executables:
   haskell-in-a-week-exe:
     main:                Main.hs
@@ -60,3 +61,4 @@ tests:
     dependencies:
     - haskell-in-a-week
     - hspec
+    - hspec-discover
