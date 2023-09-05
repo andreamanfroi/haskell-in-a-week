@@ -13,6 +13,6 @@ collatz' n = collatzHelper n []
   where
     collatzHelper 1 acc = reverse (1 : acc)
     collatzHelper x acc
-      | even x    = collatzHelper (x `div` 2) (x : acc)
-      | otherwise = collatzHelper (3 * x + 1) (x : acc)
-
+                  | even x    = collatzHelper (x `div` 2) (x : acc)
+                  | otherwise = collatzHelper (3 * x + 1) (x : acc)
+            
