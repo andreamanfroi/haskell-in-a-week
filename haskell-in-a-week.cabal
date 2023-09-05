@@ -30,16 +30,20 @@ library
       Pangram
       LongestCommonPrefix
       Palindrome
+      Hangman
   other-modules:
       Paths_haskell_in_a_week
   hs-source-dirs:
       src
       src/pangram
       src/text
+      src/hangman_haskell_project
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
     , hspec
+    , mtl
+    , random
   default-language: Haskell2010
 
 executable haskell-in-a-week-exe
@@ -53,6 +57,8 @@ executable haskell-in-a-week-exe
       base >=4.7 && <5
     , haskell-in-a-week
     , hspec
+    , mtl
+    , random
   default-language: Haskell2010
 
 test-suite haskell-in-a-week-test
@@ -71,4 +77,6 @@ test-suite haskell-in-a-week-test
     , haskell-in-a-week
     , hspec
     , hspec-discover
+    , mtl
+    , random
   default-language: Haskell2010

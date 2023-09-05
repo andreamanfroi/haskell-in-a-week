@@ -1,4 +1,3 @@
-
 {- 
     Given two words a and b, find the longest common string for these two words
     E.g.: 
