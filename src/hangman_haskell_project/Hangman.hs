@@ -1,3 +1,5 @@
+module Hangman where 
+
 import System.Random
 import Control.Monad.State
 import Control.Monad.IO.Class

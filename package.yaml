@@ -39,6 +39,7 @@ ghc-options:
 library:
   source-dirs: 
     - src
+    - src/collatz
     - src/pangram
     - src/text
     - src/hangman_haskell_project
