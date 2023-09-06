@@ -43,6 +43,9 @@ library:
     - src/pangram
     - src/text
     - src/hangman_haskell_project
+    - src/atbash
+    - src/perfect_number
+    - src/gcd
 executables:
   haskell-in-a-week-exe:
     main:                Main.hs

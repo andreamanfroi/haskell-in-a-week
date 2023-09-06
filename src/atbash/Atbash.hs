@@ -4,8 +4,10 @@
    It means that 'a' becomes 'z', 'b' becomes 'y', and so on.
 -}
 
+module Atbash (atbash, atbash', atbash'') where
+
 import Data.Maybe (mapMaybe)
-import Data.Char (ord, chr)
+import Data.Char (ord)
 
 atbash:: String -> String
 atbash = mapMaybe (\c -> lookup c (zip ['a'..'z'] (reverse ['a'..'z'])))  
@@ -21,12 +23,3 @@ atbash'' = map atb
     atb c
       | 'a' <= c && c <= 'z' = toEnum $ ord 'a' + (ord 'z' - ord c) `mod` 26
       | otherwise = c
-
-main :: IO ()
-main = do
-    putStrLn "Let's atbash a string! Please, input any lowercase string here below:"
-    x <- getLine
-    let y = atbash x
-    -- let y = atbash' x
-    -- let y = atbash'' x
-    print y

@@ -32,6 +32,9 @@ library
       LongestCommonPrefix
       Palindrome
       Hangman
+      Atbash
+      PerfectNumber
+      GreatestCommonDivisor
   other-modules:
       Paths_haskell_in_a_week
   hs-source-dirs:
@@ -40,6 +43,9 @@ library
       src/pangram
       src/text
       src/hangman_haskell_project
+      src/atbash
+      src/perfect_number
+      src/gcd
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
@@ -67,10 +73,13 @@ test-suite haskell-in-a-week-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      AtbashSpec
       CollatzSpec
+      GreatestCommonDivisorSpec
       LongestCommonPrefixSpec
       PalindromeSpec
       PangramSpec
+      PerfectNumberSpec
       Paths_haskell_in_a_week
   hs-source-dirs:
       test
