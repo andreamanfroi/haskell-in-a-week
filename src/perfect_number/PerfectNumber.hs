@@ -1,4 +1,4 @@
--- A number is called `perfect` if it is the sum of its divisors except for itself
+-- A number is called `perfect` if it is the sum of its natural divisors except for itself
 -- For example: 6 is perfect as: 1+2+3 = 6
 -- or 28: 1 + 2 + 4 + 7 + 14
 
