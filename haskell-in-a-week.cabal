@@ -25,13 +25,10 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
-      StrAdd
       Collatz
       Pangram
       LongestCommonPrefix
       Palindrome
-      Hangman
       Atbash
       PerfectNumber
       GreatestCommonDivisor
@@ -42,7 +39,6 @@ library
       src/collatz
       src/pangram
       src/text
-      src/hangman_haskell_project
       src/atbash
       src/perfect_number
       src/gcd

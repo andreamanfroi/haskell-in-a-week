@@ -42,7 +42,6 @@ library:
     - src/collatz
     - src/pangram
     - src/text
-    - src/hangman_haskell_project
     - src/atbash
     - src/perfect_number
     - src/gcd
