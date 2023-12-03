@@ -8,7 +8,9 @@ module GreatestCommonDivisor (greatestCommonDivisor, greatestCommonDivisor') whe
 import Data.List (intersect)
 
 greatestCommonDivisor :: Int -> Int -> Int
-greatestCommonDivisor a b = last $ intersect (allDivs a) (allDivs b) 
+greatestCommonDivisor a b = last $ intersect x y
+                            where x = allDivs a
+                                  y = allDivs b
 
 greatestCommonDivisor' :: Int -> Int -> Int
 greatestCommonDivisor' x 0 = x
