@@ -45,6 +45,7 @@ library:
     - src/atbash
     - src/perfect_number
     - src/gcd
+    - src/poker
 executables:
   haskell-in-a-week-exe:
     main:                Main.hs
