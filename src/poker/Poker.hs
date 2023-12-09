@@ -1,12 +1,18 @@
 
 module Poker (randomCard
+             ,dealHand
+             ,sameSuit
+             ,isPair
              ,Card(..)
              ,Rank(..)
              ,Suit(..)) where
 
 import System.Random
+import Control.Monad (replicateM)
+import Data.List
+import Data.Function
 
-data Score = Pair | ThreeOfKind | Straight | FullHouse | Poker | StraightFlush | RoyalFlush
+data Score = HighCard | Pair | ThreeOfKind | Straight | FullHouse | Poker | StraightFlush | RoyalFlush
   deriving (Show, Eq, Enum)
 
 data Rank = Two | Three | Four | Five | Six | Seven | Eight | Nine | Ten | Jack | Queen | King | Ace
@@ -31,13 +37,22 @@ randomSuit = do
 
 randomCard :: IO Card
 randomCard = do
-  print "Poker game - best hand checking in progress..."
   randomRankValue <- randomRank
   randomSuitValue <- randomSuit
   return (Card randomSuitValue randomRankValue)
 
+dealHand :: Int -> IO [Card]
+dealHand size = replicateM size randomCard
 
 
---main :: IO ()
---main = do
---    print "Poker game - best hand checking in progress..."
+-- Check if all cards in a hand have the same suit
+sameSuit :: [Card] -> Bool
+sameSuit [] = True
+sameSuit [_] = True
+sameSuit (card1@(Card suit1 _) : card2@(Card suit2 _) : rest) = suit1 == suit2 && sameSuit (card2 : rest)
+
+-- Check if at least two cards in hand have the same rank
+isPair :: [Card] -> Bool
+isPair hand =
+  any (\group -> length group == 2) (groupBy ((==) `on` rank) (sort hand))
+
