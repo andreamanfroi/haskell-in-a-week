@@ -4,6 +4,8 @@ import Poker (randomCard
              ,dealHand
              ,sameSuit
              ,isPair
+             ,threeOfKind
+             ,poker
              ,Card(..)
              ,Rank(..)
              ,Suit(..))
@@ -39,3 +41,17 @@ spec = do
     it "Poker: is pair" $ do
         let hand = [Card Spades Four, Card Diamonds Four, Card Diamonds Three, Card Diamonds Jack, Card Diamonds Queen]
         isPair hand `shouldBe` True
+
+spec :: Spec
+spec = do
+  describe "Poker" $ do
+    it "Poker: is three of kind" $ do
+        let hand = [Card Diamonds Four, Card Spades Four, Card Hearts Four, Card Diamonds Jack, Card Diamonds Queen]
+        isThreeOfKind hand `shouldBe` True
+
+spec :: Spec
+spec = do
+  describe "Poker" $ do
+    it "Poker: is poker" $ do
+        let hand = [Card Diamonds Four, Card Spades Four, Card Hearts Four, Card Clubs Four, Card Diamonds Queen]
+        isPoker hand `shouldBe` True

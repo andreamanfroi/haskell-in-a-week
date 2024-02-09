@@ -3,6 +3,8 @@ module Poker (randomCard
              ,dealHand
              ,sameSuit
              ,isPair
+             ,isThreeOfKind
+             ,isPoker
              ,Card(..)
              ,Rank(..)
              ,Suit(..)) where
@@ -56,3 +58,10 @@ isPair :: [Card] -> Bool
 isPair hand =
   any (\group -> length group == 2) (groupBy ((==) `on` rank) (sort hand))
 
+isThreeOfKind :: [Card] -> Bool
+isThreeOfKind hand =
+  any (\group -> length group == 3) (groupBy ((==) `on` rank) (sort hand))
+
+isPoker :: [Card] -> Bool
+isPoker hand =
+  any (\group -> length group == 4) (groupBy ((==) `on` rank) (sort hand))
