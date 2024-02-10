@@ -1,4 +1,6 @@
-module Collatz (collatz, collatz') where
+module Collatz (mainCollatz, collatz, collatz') where
+
+import Test.QuickCheck
 
 collatz:: Int -> Int -> Int
 collatz 1 steps = steps 
@@ -15,4 +17,12 @@ collatz' n = collatzHelper n []
     collatzHelper x acc
                   | even x    = collatzHelper (x `div` 2) (x : acc)
                   | otherwise = collatzHelper (3 * x + 1) (x : acc)
-            
+
+-- Property to test the collatz function
+prop_collatz :: Property
+prop_collatz =
+    forAll (arbitrary `suchThat` (> 0)) $ \n ->
+        collatz n 0 >= 0
+
+mainCollatz :: IO ()
+mainCollatz = quickCheck prop_collatz
