@@ -7,7 +7,7 @@ productExceptSelf arr = map (\n -> product' (filter (/=n) arr)) arr
 
 product' :: [Int] -> Int
 product' [] = 0
-product' x = foldl (*) 1 x 
+product' x = product x
 
 productExceptSelf' :: [Int] -> [Int]
 productExceptSelf' xs = zipWith (*) leftProducts rightProducts

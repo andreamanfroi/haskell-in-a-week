@@ -26,7 +26,7 @@ allDivs x = [i | i <- [1..x], x `mod` i == 0]
 prop_greatestCommonDivisor :: Int -> Int -> Property
 prop_greatestCommonDivisor a b =
   a /= 0 && b /= 0 ==> gcd a b `divides` a && gcd a b `divides` b
-  where gcd' = greatestCommonDivisor a b
+  where
         divides d n = n `mod` d == 0
 
 -- Run tests
