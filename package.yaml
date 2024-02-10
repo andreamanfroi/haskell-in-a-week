@@ -24,6 +24,7 @@ dependencies:
 - hspec
 - random
 - mtl
+- QuickCheck
 
 ghc-options:
 - -Wall
@@ -45,7 +46,8 @@ library:
     - src/atbash
     - src/perfect_number
     - src/gcd
-    - src/poker
+    - src/quickcheck
+    - src/isogram
 executables:
   haskell-in-a-week-exe:
     main:                Main.hs
@@ -69,3 +71,4 @@ tests:
     - haskell-in-a-week
     - hspec
     - hspec-discover
+    - QuickCheck

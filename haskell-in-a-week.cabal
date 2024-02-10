@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.35.1.
+-- This file has been generated from package.yaml by hpack version 0.36.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -32,7 +32,8 @@ library
       Atbash
       PerfectNumber
       GreatestCommonDivisor
-      Poker
+      QuickCheckExample
+      Isogram
   other-modules:
       Paths_haskell_in_a_week
   hs-source-dirs:
@@ -43,10 +44,12 @@ library
       src/atbash
       src/perfect_number
       src/gcd
-      src/poker
+      src/quickcheck
+      src/isogram
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
     , hspec
     , mtl
     , random
@@ -60,7 +63,8 @@ executable haskell-in-a-week-exe
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
     , haskell-in-a-week
     , hspec
     , mtl
@@ -78,13 +82,13 @@ test-suite haskell-in-a-week-test
       PalindromeSpec
       PangramSpec
       PerfectNumberSpec
-      PokerSpec
       Paths_haskell_in_a_week
   hs-source-dirs:
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
     , haskell-in-a-week
     , hspec
     , hspec-discover
