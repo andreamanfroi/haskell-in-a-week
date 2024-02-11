@@ -49,6 +49,7 @@ library:
     - src/quickcheck
     - src/isogram
     - src/squarecode
+    - src/isbn
 executables:
   haskell-in-a-week-exe:
     main:                Main.hs

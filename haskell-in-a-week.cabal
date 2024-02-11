@@ -35,6 +35,7 @@ library
       QuickCheckExample
       Isogram
       SquareCode
+      Isbn
   other-modules:
       Paths_haskell_in_a_week
   hs-source-dirs:
@@ -48,6 +49,7 @@ library
       src/quickcheck
       src/isogram
       src/squarecode
+      src/isbn
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       QuickCheck
@@ -80,6 +82,7 @@ test-suite haskell-in-a-week-test
       AtbashSpec
       CollatzSpec
       GreatestCommonDivisorSpec
+      IsbnSpec
       LongestCommonPrefixSpec
       PalindromeSpec
       PangramSpec
