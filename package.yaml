@@ -48,6 +48,7 @@ library:
     - src/gcd
     - src/quickcheck
     - src/isogram
+    - src/squarecode
 executables:
   haskell-in-a-week-exe:
     main:                Main.hs

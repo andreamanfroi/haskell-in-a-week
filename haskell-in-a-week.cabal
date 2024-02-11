@@ -34,6 +34,7 @@ library
       GreatestCommonDivisor
       QuickCheckExample
       Isogram
+      SquareCode
   other-modules:
       Paths_haskell_in_a_week
   hs-source-dirs:
@@ -46,6 +47,7 @@ library
       src/gcd
       src/quickcheck
       src/isogram
+      src/squarecode
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       QuickCheck
