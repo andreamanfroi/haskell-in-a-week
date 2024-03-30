@@ -37,6 +37,7 @@ library
       SquareCode
       Isbn
       ProductExceptSelf
+      RunningSum
   other-modules:
       Paths_haskell_in_a_week
   hs-source-dirs:
@@ -90,6 +91,7 @@ test-suite haskell-in-a-week-test
       PangramSpec
       PerfectNumberSpec
       ProductExceptSelfSpec
+      RunningSumSpec
       Paths_haskell_in_a_week
   hs-source-dirs:
       test
