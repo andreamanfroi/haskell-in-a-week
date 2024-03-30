@@ -1,6 +1,6 @@
 module Occurences (countOccurrences, tailing) where
 
-import Data.List (isInfixOf, isPrefixOf, tails)
+import Data.List (isPrefixOf, tails)
 
 countOccurrences :: Eq a => [a] -> [a] -> Int
 countOccurrences subList list = length [ () | x <- tails list, subList `isPrefixOf` x ]

@@ -1,4 +1,5 @@
 
+module ProductExceptSelf (productExceptSelf, productExceptSelf') where
 
 productExceptSelf :: [Int] -> [Int]
 productExceptSelf [] = []
@@ -14,10 +15,3 @@ productExceptSelf' xs = zipWith (*) leftProducts rightProducts
   where
     leftProducts = scanl (*) 1 xs
     rightProducts = tail (scanr (*) 1 xs)
-
-
-main :: IO ()
-main = do
-    let arr = [1,2,3,4]
-    print $ productExceptSelf arr
-    print $ productExceptSelf' arr

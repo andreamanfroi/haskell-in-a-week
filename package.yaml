@@ -50,6 +50,7 @@ library:
     - src/isogram
     - src/squarecode
     - src/isbn
+    - src/misc
 executables:
   haskell-in-a-week-exe:
     main:                Main.hs
