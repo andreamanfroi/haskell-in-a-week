@@ -51,6 +51,7 @@ library:
     - src/squarecode
     - src/isbn
     - src/misc
+    - src/permutations
 executables:
   haskell-in-a-week-exe:
     main:                Main.hs

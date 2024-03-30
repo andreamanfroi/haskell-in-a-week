@@ -38,6 +38,7 @@ library
       Isbn
       ProductExceptSelf
       RunningSum
+      Permutations
   other-modules:
       Paths_haskell_in_a_week
   hs-source-dirs:
@@ -53,6 +54,7 @@ library
       src/squarecode
       src/isbn
       src/misc
+      src/permutations
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       QuickCheck
@@ -90,6 +92,7 @@ test-suite haskell-in-a-week-test
       PalindromeSpec
       PangramSpec
       PerfectNumberSpec
+      PermutationsSpec
       ProductExceptSelfSpec
       RunningSumSpec
       Paths_haskell_in_a_week
