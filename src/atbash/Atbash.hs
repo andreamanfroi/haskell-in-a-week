@@ -4,7 +4,7 @@
    It means that 'a' becomes 'z', 'b' becomes 'y', and so on.
 -}
 
-module Atbash (atbash, atbash', atbash'') where
+module Atbash (atbash, atbash', atbash'',atbash''') where
 
 import Data.Maybe (mapMaybe)
 import Data.Char (ord)
@@ -23,3 +23,6 @@ atbash'' = map atb
     atb c
       | 'a' <= c && c <= 'z' = toEnum $ ord 'a' + (ord 'z' - ord c) `mod` 26
       | otherwise = c
+
+atbash''' :: String -> String
+atbash''' = mapMaybe (flip lookup $ zip ['a'..'z'] (reverse ['a'..'z']))
