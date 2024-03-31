@@ -52,6 +52,7 @@ library:
     - src/isbn
     - src/misc
     - src/permutations
+    - src/bindings
 executables:
   haskell-in-a-week-exe:
     main:                Main.hs
