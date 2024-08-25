@@ -2,6 +2,7 @@
 -- Description: creates a tuple of two lists from the original one separated at condition boundary
 -- Signature: (a -> Bool) -> [a] -> ([a],[a])
 
+main :: IO ()
 main = do
        let x = break (3==) [1,2,3,4,5]
        putStrLn "Break creates a tuple of two lists from an input list"
@@ -9,10 +10,10 @@ main = do
        putStrLn "For example, given [1,2,3,4,5], then break (3==) [1,2,3,4,5] will give:"
        let firstList = fst x
        let secondList = snd x
-       putStrLn (show firstList)
-       putStrLn (show secondList)
+       print firstList
+       print secondList
        let x' = break (\x -> x==5) [1,2,3,4,5,6,7]
        let firstList' = fst x'
        let secondList' = snd x'
-       putStrLn (show firstList')
-       putStrLn (show secondList')
+       print firstList'
+       print secondList'
