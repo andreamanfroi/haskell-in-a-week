@@ -11,17 +11,9 @@ main = do
     hFlush stdout  -- Flush the standard output buffer
     if args == ["OK"]
         then do
-            putStrLn ("success!")
+            putStrLn "success!"
             exitSuccess
         else do
-            putStrLn ("failure!")
+            putStrLn "failure!"
             exitWith (ExitFailure 1)
-
--- import System.Environment
--- import System.Exit
-
--- main :: IO ()
--- main = do
---     args <- getArgs
---     putStrLn ("Command-line arguments: " ++ show args)
---     exitWith (ExitFailure 1)
+            

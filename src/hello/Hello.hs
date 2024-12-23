@@ -2,10 +2,10 @@
 {-
     Generic greetings :)
 -}
-module Hello (hello, helloUser)
+module Hello (hello, helloUser) where
 
 hello :: IO ()
 hello = putStrLn "Welcome to Haskell!"
 
 helloUser :: String -> IO ()
-helloUser user = putStrLn "Welcome to Haskell" <> user
+helloUser user = print $ "Hello" <> " " <> user

@@ -1,10 +1,5 @@
 module PointFree (examplePointFree) where
 
-    --
-    -- - "Da argument is to be sold,
-    --    not to be told" -  Snoop Dogg
-    --
-
     doubleIt :: Int -> Int
     doubleIt x = x * 2
 

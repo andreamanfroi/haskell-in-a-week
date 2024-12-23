@@ -1,4 +1,4 @@
-import System.Random
+import System.Random ( randomRIO )
 
 callMeMaybe :: (Ord a, Num a) => a -> Maybe a
 callMeMaybe x = if x < 5 then Nothing else Just x

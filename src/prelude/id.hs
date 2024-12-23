@@ -1,5 +1,5 @@
 
-identity x = id x
+identity = id
 
 main = do
   print $ "The value of the id function applied to the int 3 is :"

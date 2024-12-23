@@ -1,7 +1,5 @@
 
--- Function name: abs
--- Description: absolute value of a int
--- Signature: Num a => a -> a
+-- abs returns the absolute value of a number
 
 main :: IO ()
 main = do
