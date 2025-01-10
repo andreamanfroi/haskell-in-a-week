@@ -36,6 +36,7 @@ library
       Isogram
       SquareCode
       Isbn
+      Length
       ProductExceptSelf
       RunningSum
       Permutations
